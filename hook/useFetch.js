@@ -10,7 +10,7 @@ const useFetch = (endpoint, query, useSavedData = false) => {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      'X-RapidAPI-Key': '',
+      'X-RapidAPI-Key': 'your-api-key',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
     params: {
@@ -33,7 +33,7 @@ const useFetch = (endpoint, query, useSavedData = false) => {
   };
 
   useEffect(() => {
-    if (useSavedData) {
+    if (!useSavedData) {
       // Load data from saved source (e.g., local storage)
       const savedData = [
     {
